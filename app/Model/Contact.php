@@ -10,6 +10,9 @@ App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 class Contact extends AppModel
 {
     var $useTable = "contacts";
+    public $hasOne = array(
+        'Account'
+    );
     public $primaryKey = 'id';
 
     public $validate = array(
@@ -20,6 +23,31 @@ class Contact extends AppModel
         "fullname" => array(
             'rule' => 'notBlank',
             'message' => 'Lỗi rồi ku',
+        ),
+        "email" =>array(
+            'rule' => 'checkEmail',
+            'massage' => 'Email đã được sử dụng'
         )
     );
+    function checkEmail(){
+        if(isset($this->data['Contact']['id'])){
+            $where = array(
+                "id !=" => $this->data['Contact']['id'],
+                "email" => $this->data['Contact']['email'],
+            );
+        }else{
+            $where = array(
+                "email" => $this->data['Contact']['email'],
+            );
+        }
+        $this->find("first", array(
+            'conditions' => $where
+        ));
+        $count = $this->getNumRows();
+        if($count!=0){
+            return false;
+        }else{
+            return true;
+        }
+    }
 }

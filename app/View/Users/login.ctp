@@ -10,7 +10,7 @@
 <body>
     <span class="error" style="text-a"><?php echo $error; ?></span>
 	<form class="form" method="post" action="">
-		<div class="form-group">
+		<div class="form-group userfrom" >
 	    	<label for="User">Username</label>
 	    	<input type="text" class="form-control" id="user" name="username" aria-describedby="userHelp" placeholder="Nhập user" required>
 	  	</div>

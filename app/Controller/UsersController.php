@@ -38,9 +38,13 @@ class UsersController extends AppController
     }
 
     function info(){
-        if($this->Session->check("session")){//kiểm tra có session hay không
-            
-        }
+        $this->paginate = array(
+            'limit' => 4,
+            'order' => array('id' => 'desc')
+        );
+        $data = $this->paginate('Contact');
+        //echo "<pre>"; pr($data);die;
+        $this->set("data",$data);
     }
     function logout(){
         $this->Session->delete('session'); //xóa session
@@ -52,6 +56,7 @@ class UsersController extends AppController
         $errors = array();
         if($this->request->is('post')){
             $data = $this->request->data;
+//            echo "<pre>" ; pr($data); die;
             $this->Account->set($data['Account']);
             if(!$this->Account->validates()){
                 $errors['Account'] = $this->Account->validationErrors;
@@ -77,11 +82,8 @@ class UsersController extends AppController
                     );
                 }
             }else{
-
             }
-
         }
-
         $this->set(compact('data','errors'));
 
     }

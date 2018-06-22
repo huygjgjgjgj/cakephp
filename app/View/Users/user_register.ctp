@@ -12,7 +12,7 @@
 	<form class="form" name="register" method="post">
 		<div class="form-group">
 	    	<label for="Name">Fullname *</label>
-	    	<input type="text" name='Contact[fullname]' value="<?php if(!empty($data['Contact']['fullname'])){echo $data['Contact']['fullname'];} ?>" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Nhập họ tên" required>
+	    	<input type="text" name='Contact[fullname]' value="<?php if(!empty($data['Contact']['fullname'])){echo $data['Contact']['fullname'];} ?>" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Nhập họ tên">
             <?php
                 if(!empty($errors['Contact']['fullname'])){
                     echo "<span>".$errors['Contact']['fullname'][0]."</span>";
@@ -22,18 +22,23 @@
 
 	  	<div class="form-group">
 	    	<label for="User">Username *</label>
-	    	<input type="text" class="form-control" name="Account[username]" value="<?php if(!empty($data['Account']['username'])){echo $data['Account']['username'];} ?>"  id="username" aria-describedby="userHelp" placeholder="Nhập user" required>
+	    	<input type="text" class="form-control" name="Account[username]" value="<?php if(!empty($data['Account']['username'])){echo $data['Account']['username'];} ?>"  id="username" aria-describedby="userHelp" placeholder="Nhập user" >
             <?php
             if(!empty($errors['Account']['username'])){
-                echo "<span>".$errors['Account']['username'][0]."</span>";
+                echo "<span>".$errors['Account']['username']['0']."</span>";
             }
             ?>
 	  	</div>
 
 		<div class="form-group">
 	    	<label for="exampleInputEmail1">Email address *</label>
-	    	<input type="email" class="form-control" name="Contact[Email]" id="email" value="<?php if(!empty($data['Contact']['Emai'])){echo $data['Contact']['Emai'];} ?>" aria-describedby="emailHelp" placeholder="Nhập email" required>
-	  	</div>
+	    	<input type="email" class="form-control" name="Contact[email]" id="email" value="<?php if(!empty($data['Contact']['emai'])){echo $data['Contact']['emai'];} ?>" aria-describedby="emailHelp" placeholder="Nhập email" required>
+            <?php
+            if(!empty($errors['Contact']['email'])){
+                echo "<span>".$errors['Contact']['email'][0]."</span>";
+            }
+            ?>
+        </div>
 
 	  	<div class="form-group">
 		    <label for="exampleInputPassword1">Password *</label>
@@ -52,7 +57,7 @@
 
 	  	<div class="form-group">
 		    <label for="city">Choose the city</label>
-		    <select class="form-control" id="city" name="city">
+		    <select class="form-control" id="city" name="Contact[city]">
 			    <option>TP Hà Nội</option>
 			    <option>TP Hồ Chí Minh</option>
 			    <option>Nghệ An</option>
@@ -63,7 +68,7 @@
 
 		<div class="form-group">
 	    	<label for="CMT">CMT *</label>
-	    	<input type="number" class="form-control" name="cmt" id="Contact[cmt]" value="<?php if(!empty($data['Contact']['cmt'])){echo $data['Contact']['cmt'];} ?>" aria-describedby="addressHelp" placeholder="Nhập số chứng minh" required>
+	    	<input type="number" class="form-control" name="Contact[cmt]" id="cmt" value="<?php if(!empty($data['Contact']['cmt'])){echo $data['Contact']['cmt'];} ?>" aria-describedby="addressHelp" placeholder="Nhập số chứng minh" required>
 	  	</div>
 
 	  	<div class="form-check">
