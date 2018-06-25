@@ -11,14 +11,18 @@ class Contact extends AppModel
 {
     var $useTable = "contacts";
     public $hasOne = array(
-        'Account'
+        'Account' => array(
+            'className' => 'Account',
+            'dependent' => 'true',
+            'foreignKey' => 'id',
+        )
     );
-    public $primaryKey = 'id';
+//    public $primaryKey = 'id';
 
     public $validate = array(
         "cmt" => array(
             'rule' => '/^[a-z0-9]{9,13}$/i',
-            'message' => 'Chứng minh thư phải là số nguyên và bảng chữ cái, trong khoảng từ 9 đến 13 ký tự',
+            'message' => 'Chứng minh thư phải là số nguyên, trong khoảng từ 9 đến 13 ký tự',
         ),
         "fullname" => array(
             'rule' => 'notBlank',
@@ -29,6 +33,7 @@ class Contact extends AppModel
             'massage' => 'Email đã được sử dụng'
         )
     );
+
     function checkEmail(){
         if(isset($this->data['Contact']['id'])){
             $where = array(

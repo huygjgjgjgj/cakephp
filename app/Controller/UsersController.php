@@ -24,6 +24,7 @@ class UsersController extends AppController
         if($this->request->is('post')){
             $username = $this->request->data('username');
             $password = $this->request->data('password');
+            $password = md5($password);
 
             if($this->Account->checkLogin($username,$password)) {
                 $this->Session->write("session", $username); //ghi session
@@ -56,6 +57,9 @@ class UsersController extends AppController
         $errors = array();
         if($this->request->is('post')){
             $data = $this->request->data;
+            $data['Account']['password'] = md5($data['Account']['password']);
+            $data['Account']['password_confirm'] = md5($data['Account']['password_confirm']);
+            //return $data;
 //            echo "<pre>" ; pr($data); die;
             $this->Account->set($data['Account']);
             if(!$this->Account->validates()){
@@ -65,9 +69,10 @@ class UsersController extends AppController
             if(!$this->Contact->validates()){
                 $errors['Contact'] = $this->Contact->validationErrors;
             }
+
             if(empty($errors)){
-                if ($this->Account->save($data['Account'])) {
-                    if ($this->Contact->save($data['Contact'])) {
+                if ($this->Contact->save($data['Contact'])) {
+                    if ($this->Account->save($data['Account'])) {
                         $this->Flash->success(__('The user has been saved'));
                         return $this->redirect('info');
                     }else{

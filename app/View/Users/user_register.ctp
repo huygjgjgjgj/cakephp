@@ -32,7 +32,7 @@
 
 		<div class="form-group">
 	    	<label for="exampleInputEmail1">Email address *</label>
-	    	<input type="email" class="form-control" name="Contact[email]" id="email" value="<?php if(!empty($data['Contact']['emai'])){echo $data['Contact']['emai'];} ?>" aria-describedby="emailHelp" placeholder="Nhập email" required>
+	    	<input type="email" class="form-control" name="Contact[email]" id="email" value="<?php if(!empty($data['Contact']['email'])){echo $data['Contact']['email'];} ?>" aria-describedby="emailHelp" placeholder="Nhập email" required>
             <?php
             if(!empty($errors['Contact']['email'])){
                 echo "<span>".$errors['Contact']['email'][0]."</span>";
@@ -47,7 +47,12 @@
 
 	  	<div class="form-group">
 		    <label for="exampleInputPassword1">Enter the password *</label>
-		    <input type="password" class="form-control" id="Password2" placeholder="Password" required>
+		    <input type="password" name="Account[password_confirm]" class="form-control" id="Password2" placeholder="Password" required>
+            <?php
+            if(!empty($errors['Account']['password']['password_confirm'])){
+                echo "<span>".$errors['Account']['password']['password_confirm'][0]."</span>";
+            }
+            ?>
 	  	</div>
 
 	  	<div class="form-group">
@@ -69,7 +74,12 @@
 		<div class="form-group">
 	    	<label for="CMT">CMT *</label>
 	    	<input type="number" class="form-control" name="Contact[cmt]" id="cmt" value="<?php if(!empty($data['Contact']['cmt'])){echo $data['Contact']['cmt'];} ?>" aria-describedby="addressHelp" placeholder="Nhập số chứng minh" required>
-	  	</div>
+            <?php
+            if(!empty($errors['Contact']['cmt'])){
+                echo "<span>".$errors['Contact']['cmt'][0]."</span>";
+            }
+            ?>
+        </div>
 
 	  	<div class="form-check">
 		    <input type="checkbox" class="form-check-input" id="exampleCheck1" required>

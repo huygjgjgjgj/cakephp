@@ -33,4 +33,6 @@ App::uses('RunHelper', 'Lib');
  */
 class AppController extends Controller {
 	public $viewClass = 'Smarty';
+//    public $components = array('DebugKit.Toolbar','Session');
+
 }

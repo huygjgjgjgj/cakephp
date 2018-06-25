@@ -22,8 +22,8 @@ class Account extends AppModel
     public $validate = array(
         'username' => array(
             'rule1' => array(
-                'rule'=>'/^[a-z0-9]{9,13}$/i',
-                'message' => 'Tên đăng nhập phải là số nguyên và chữ cái, trong khoảng từ 4 đến 10 ký tự',
+                'rule'=>'/^[a-z0-9]{4,13}$/i',
+                'message' => 'Tên đăng nhập phải là số nguyên và chữ cái, trong khoảng từ 4 đến 13 ký tự',
             ),
             'rule2' => array(
                 'rule' => 'notBlank',
@@ -33,8 +33,16 @@ class Account extends AppModel
               "rule" => "checkUsername", // call function check Username
               "message" => "Username đã có người đăng ký",
            ),
-        )
-
+        ),
+        'password' => array(
+            'notempty' => array(
+                'rule' => array('notBlank'),
+            ),
+            'password_confirm'=>array(
+                'rule'=>array('password_confirm'),
+                'message'=>'Không khớp với Mật khẩu',
+            ),
+        ),
     );
     function checkUsername(){
         if(isset($this->data['Account']['id'])){
@@ -57,4 +65,35 @@ class Account extends AppModel
             return true;
         }
     }
+
+    public function password_confirm(){
+        if ($this->data['Account']['password'] !== $this->data['Account']['password_confirm']){
+            return false;
+        }
+        return true;
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
