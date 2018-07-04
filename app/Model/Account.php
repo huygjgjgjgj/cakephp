@@ -10,20 +10,14 @@ class Account extends AppModel
 {
     var $useTable = "accounts";
     function checkLogin($username,$password){
-        $sql = array('conditions' => array('username'=>$username, 'password'=>$password));
-        $data = $this->find('all',$sql);
-        if($this->getNumRows()==0){
-            return false;
-        }else{
-            return true;
-        }
+        return $this->find('all',array('conditions' => array('username'=>$username, 'password'=>$password)));
     }
 
     public $validate = array(
         'username' => array(
             'rule1' => array(
-                'rule'=>'/^[a-z0-9]{4,13}$/i',
-                'message' => 'Tên đăng nhập phải là số nguyên và chữ cái, trong khoảng từ 4 đến 13 ký tự',
+                'rule'=>'/^[a-z0-9]{8,20}$/i',
+                'message' => 'Tên đăng nhập không được có ký tự đặc biệt và phải có nhiều hơn 8 ký tự',
             ),
             'rule2' => array(
                 'rule' => 'notBlank',
@@ -35,9 +29,14 @@ class Account extends AppModel
            ),
         ),
         'password' => array(
-            'notempty' => array(
-                'rule' => array('notBlank'),
+            'rule1' => array(
+                'rule' => 'notBlank',
+                'message' => 'Chưa nhập mật khẩu',
             ),
+//            'rule2' => array(
+//                'rule' => '/^[a-z0-9]{8,20}$/i',
+//                'message' => 'Mật khẩu không được có ký tự đặc biệt và phải có nhiều hơn 8 ký tự',
+//            ),
             'password_confirm'=>array(
                 'rule'=>array('password_confirm'),
                 'message'=>'Không khớp với Mật khẩu',
@@ -72,8 +71,6 @@ class Account extends AppModel
         }
         return true;
     }
-
-
 }
 
 

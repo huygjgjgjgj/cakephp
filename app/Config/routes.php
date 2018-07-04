@@ -33,6 +33,20 @@
 
 	Router::connect('admin', array('controlller'=>'users', 'action' => 'admin'));
 
+
+    Router::connect('/lang/*', array('controller' => 'trans', 'action' => 'change'));
+
+    Router::connect('/eng/*', array(
+        'controller' => "trans",
+        'action' => "shuntRequest",
+        'lang' => 'eng'
+    ));
+    Router::connect('/vie/*', array(
+        'controller' => "trans",
+        'action' => "shuntRequest",
+        'lang' => 'vie'
+    ));
+
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.

@@ -1,0 +1,80 @@
+msgid "Tôi tên là Huy"
+msgstr "Tôi tên là Huy"
+
+msgid "username"
+msgstr "Tên đăng nhập"
+
+msgid "fullname"
+msgstr "Họ tên"
+
+msgid "password"
+msgstr "Mật khẩu"
+
+msgid "pass"
+msgstr "mật khẩu"
+
+msgid "pass_confirm"
+msgstr "Nhập lại mật khẩu"
+
+msgid "save"
+msgstr "Lưu"
+
+msgid "register"
+msgstr "Đăng ký"
+
+msgid "forgot"
+msgstr "Quên"
+
+msgid "login"
+msgstr "Đăng nhập"
+
+msgid "logout"
+msgstr "Đăng xuất"
+
+msgid "no"
+msgstr "Không"
+
+msgid "data"
+msgstr "cơ sỏ dữ liệu"
+
+msgid "data table"
+msgstr "Bảng cơ sở dữ liệu"
+
+msgid "Tên đăng nhập phải lớn hơn 8 ký tự"
+msgstr "Tên đăng nhập phải lớn hơn 8 ký tự"
+
+msgid "Tên đăng nhập ko được để trỗng"
+msgstr "Tên đăng nhập ko được để trỗng"
+
+msgid "Mật khẩu phải lớn hơn 8 ký tự"
+msgstr "Mật khẩu phải lớn hơn 8 ký tự"
+
+msgid "Mật khẩu ko được để trỗng"
+msgstr "Mật khẩu ko được để trỗng"
+
+msgid "fullname"
+msgstr "Họ tên"
+
+msgid "address"
+msgstr "Địa chỉ"
+
+msgid "address_mail"
+msgstr "Địa chỉ Email"
+
+msgid "city"
+msgstr "Thành phố"
+
+msgid "cmt"
+msgstr "Chứng minh thư"
+
+msgid "Mật khẩu phải có ít nhất 1 chữ hoa, 1 chữ thường và số"
+msgstr "Mật khẩu phải có ít nhất 1 chữ hoa, 1 chữ thường và số"
+
+msgid "pre"
+msgstr "Trang trước"
+
+msgid "next"
+msgstr "Trang sau"
+
+msgid "page"
+msgstr "trang"

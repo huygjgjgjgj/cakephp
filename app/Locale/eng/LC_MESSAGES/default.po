@@ -1,0 +1,100 @@
+msgid "Tôi tên là Huy"
+msgstr "My name is Huy"
+
+msgid "username"
+msgstr "User name"
+
+msgid "fullname"
+msgstr "Full name"
+
+msgid "password"
+msgstr "Password"
+
+msgid "pass"
+msgstr "password"
+
+msgid "pass_confirm"
+msgstr "Enter the password"
+
+msgid "save"
+msgstr "Save"
+
+msgid "forgot"
+msgstr "Forgot"
+
+msgid "login"
+msgstr "Login"
+
+msgid "login"
+msgstr "Logout"
+
+msgid "no"
+msgstr "No"
+
+msgid "data"
+msgstr "data"
+
+msgid "data table"
+msgstr "Data table"
+
+msgid "Tên đăng nhập phải lớn hơn 8 ký tự"
+msgstr "Username must be greater than 8 characters"
+
+msgid "Tên đăng nhập ko được để trỗng"
+msgstr "Username is not be empty"
+
+msgid "Mật khẩu phải lớn hơn 8 ký tự"
+msgstr "Password must be greater than 8 characters"
+
+msgid "Mật khẩu ko được để trỗng"
+msgstr "Password is not be empty"
+
+msgid "fullname"
+msgstr "Full name"
+
+msgid "address"
+msgstr "Address"
+
+msgid "address_mail"
+msgstr "Email address"
+
+msgid "city"
+msgstr "City"
+
+msgid "cmt"
+msgstr "Cmt"
+
+msgid "Mật khẩu phải có ít nhất 1 chữ hoa, 1 chữ thường và số"
+msgstr "Passwords must have at least 1 uppercase letter, 1 lowercase letter and number"
+
+msgid "register"
+msgstr "Register"
+
+msgid "pre"
+msgstr "Previous"
+
+msgid "next"
+msgstr "Next"
+
+msgid "page"
+msgstr "Page"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

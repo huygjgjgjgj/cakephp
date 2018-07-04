@@ -14,9 +14,10 @@ class Contact extends AppModel
         'Account' => array(
             'className' => 'Account',
             'dependent' => 'true',
-            'foreignKey' => 'id',
+            'foreignKey' => 'contact_id',
         )
     );
+
 //    public $primaryKey = 'id';
 
     public $validate = array(
@@ -26,11 +27,15 @@ class Contact extends AppModel
         ),
         "fullname" => array(
             'rule' => 'notBlank',
-            'message' => 'Lỗi rồi ku',
+            'message' => 'Bạn chưa nhập họ tên',
         ),
         "email" =>array(
             'rule' => 'checkEmail',
-            'massage' => 'Email đã được sử dụng'
+            'message' => 'Email đã được sử dụng'
+        ),
+        "address"=> array(
+            'rule' => 'notBlank',
+            'message'=> 'Chưa nhập địa chỉ'
         )
     );
 
